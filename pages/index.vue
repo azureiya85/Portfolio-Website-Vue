@@ -17,12 +17,18 @@
       :total-sections="totalSections"
       :is-visible="visibleSections.mySkills"
     />
-    <!-- Placeholder for future sections -->
-    <!--
-    <MySkillsSection ref="mySkillsSectionRef" :active-section="activeSectionIndex" :total-sections="totalSections" :is-visible="visibleSections.mySkills" />
-    <ProjectsHighlightSection ref="projectsHighlightSectionRef" :active-section="activeSectionIndex" :total-sections="totalSections" :is-visible="visibleSections.projects" />
-    <ContactMeSection ref="contactMeSectionRef" :active-section="activeSectionIndex" :total-sections="totalSections" :is-visible="visibleSections.contact" />
-    -->
+    <ProjectsHighlightSection
+     ref="projectsHighlightsSectionRef"
+     :active-section="activeSectionIndex"
+     :total-sections="totalSections"
+     :is-visible="visibleSections.projectsHighlights"
+   />
+   <ContactMeSection
+  ref="contactMeSectionRef"
+  :active-section="activeSectionIndex"
+  :total-sections="totalSections"
+  :is-visible="visibleSections.contact"
+/>
   </main>
 </template>
 
@@ -31,7 +37,10 @@ import { ref, onMounted, onUnmounted, nextTick } from 'vue';
 import HeroSection from '~/components/templates/HeroSection.vue';
 import WhatIDoSection from '~/components/templates/WhatIDoSection.vue';
 import MySkillsSection from '~/components/templates/MySkillsSection.vue'
-// Import other sections when you create them
+import ProjectsHighlightSection from '~/components/templates/ProjectsHighlightSection.vue';       
+import ContactMeSection from '~/components/templates/ContactMeSection.vue';
+
+    
 
 const totalSections = 5; // Total number of sections
 const activeSectionIndex = ref(1); // 1-indexed for easier prop passing to pagination
@@ -40,15 +49,17 @@ const activeSectionIndex = ref(1); // 1-indexed for easier prop passing to pagin
 const heroSectionRef = ref<InstanceType<typeof HeroSection> | null>(null);
 const whatIDoSectionRef = ref<InstanceType<typeof WhatIDoSection> | null>(null);
 const mySkillsSectionRef = ref<InstanceType<typeof MySkillsSection> | null>(null); 
+const projectsHighlightsSectionRef = ref<InstanceType<typeof ProjectsHighlightSection> | null>(null);
+const contactMeSectionRef = ref<InstanceType<typeof ContactMeSection> | null>(null);
   
-// Add refs for other sections here
+// Add refs for other sections
 
 // Reactive state for section visibility (for scroll-triggered animations)
 const visibleSections = ref({
-  hero: true, // Hero is visible by default, but we can track it if needed
+  hero: true, 
   whatIDo: false,
   mySkills: false,
-  projects: false,
+  projectsHighlights: false,
   contact: false,
 });
 
@@ -65,10 +76,12 @@ onMounted(async () => {
 
   sectionElements.value = [
     { id: 'hero', el: (heroSectionRef.value?.$el as HTMLElement), index: 1 },
-    // IMPORTANT: Ensure this 'id' matches the actual id attribute in WhatIDoSection.vue's template
     { id: 'what-i-do', el: (whatIDoSectionRef.value?.$el as HTMLElement), index: 2 },
     { id: 'my-skills', el: (mySkillsSectionRef.value?.$el as HTMLElement), index: 3 },
-    // ... other sections
+    { id: 'projects-highlight', el: (projectsHighlightsSectionRef.value?.$el as HTMLElement), index: 4 },
+    { id: 'contact-me', el: (contactMeSectionRef.value?.$el as HTMLElement), index: 5 },
+
+    
   ].filter(section => section.el);
 
   if (!sectionElements.value.length) {
@@ -87,20 +100,18 @@ onMounted(async () => {
       const htmlId = entry.target.id; // e.g., 'hero', 'what-i-do'
       let keyToUpdateInVisibleSections: keyof typeof visibleSections.value | null = null;
 
-      // --- THIS IS THE CRITICAL MAPPING ---
       if (htmlId === 'hero') {
         keyToUpdateInVisibleSections = 'hero';
       } else if (htmlId === 'what-i-do') {
         keyToUpdateInVisibleSections = 'whatIDo'; 
        } else if (htmlId === 'my-skills') { 
       keyToUpdateInVisibleSections = 'mySkills';
+      } else if (htmlId === 'projects-highlight') {
+        keyToUpdateInVisibleSections = 'projectsHighlights';
+      } else if (htmlId === 'contact-me') {
+        keyToUpdateInVisibleSections = 'contact';
     }
-      // --- Add more mappings for future sections ---
-      // else if (htmlId === 'my-skills') {
-      //   keyToUpdateInVisibleSections = 'mySkills';
-      // }
-      // etc.
-
+ 
       if (entry.isIntersecting) {
         console.log(`DEBUG: ${htmlId} is intersecting.`); // For debugging
         if (keyToUpdateInVisibleSections) {
@@ -112,10 +123,10 @@ onMounted(async () => {
           activeSectionIndex.value = observedSection.index;
         }
       } else {
-        // Optional: If you want animations to re-trigger when scrolling out and back in
-        // if (keyToUpdateInVisibleSections) {
-        //   visibleSections.value[keyToUpdateInVisibleSections] = false;
-        // }
+        // Animations to re-trigger when scrolling out and back in
+         if (keyToUpdateInVisibleSections) {
+           visibleSections.value[keyToUpdateInVisibleSections] = false;
+         }
       }
     });
   }, options);
@@ -125,14 +136,10 @@ onMounted(async () => {
       console.log("DEBUG: Observing element with ID:", section.el.id); // For debugging
       observer?.observe(section.el);
     } else {
-      // This might happen if a ref isn't properly assigned or the component didn't mount
       console.warn(`DEBUG: Element for section id '${section.id}' in sectionElements was undefined and cannot be observed.`);
     }
   });
 
-  // Initial check for hero section visibility if it's at the top
-  // Hero section animates on its own via its onMounted, so this might not be strictly necessary
-  // for 'hero', but it's good practice for sections that are immediately visible.
   if (heroSectionRef.value?.$el) {
       const heroRect = (heroSectionRef.value.$el as HTMLElement).getBoundingClientRect();
       if (heroRect.top < window.innerHeight && heroRect.bottom >= 0) {
@@ -141,7 +148,6 @@ onMounted(async () => {
           }
       }
   }
-  // The WhatIDo section should definitely start with visibleSections.whatIDo = false
 });
 
 onUnmounted(() => {

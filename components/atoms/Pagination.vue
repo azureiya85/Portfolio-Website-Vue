@@ -10,9 +10,6 @@ class="absolute top-0 bottom-0 left-1/2 w-0.5 opacity-50 transform -translate-x-
       class="w-4 h-4 rounded-full transition-all duration-300 ease-in-out"
       :class="[
         i === activeSection ? 'bg-custom-accent-700 scale-110' : 'border-2 border-custom-accent-700 bg-transparent'
-        // Or if you want to use Nuxt UI's primary mapping:
-        // i === activeSection ? 'bg-primary-500 scale-110' : 'border-2 border-primary-500 bg-transparent'
-        // (assuming --ui-primary maps to --color-primary-500 correctly)
       ]"
     />
   </div>

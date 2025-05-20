@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center group">
-          <span class="font-brand text-3xl md:text-4xl font-extrabold">
+          <span class="font-brand text-3xl md:text-4xl font-black">
             <span class="text-white group-hover:text-neutral-200 transition-colors">ry</span><!--
          --><span class="text-custom-accent-600 group-hover:text-custom-accent-500 transition-colors">hze</span>
           </span>
@@ -17,21 +17,21 @@
             class="text-neutral-200 hover:text-white transition-colors text-lg"
             active-class="text-white font-semibold"
           >
-            About
+            about
           </NuxtLink>
           <NuxtLink
             to="/skills"
             class="text-neutral-200 hover:text-white transition-colors text-lg"
             active-class="text-white font-semibold"
           >
-            Skills
+            skills
           </NuxtLink>
           <NuxtLink
             to="/projects"
             class="text-neutral-200 hover:text-white transition-colors text-lg"
             active-class="text-white font-semibold"
           >
-            Projects
+            projects
           </NuxtLink>
         </div>
       </div>

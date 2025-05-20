@@ -10,7 +10,7 @@
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           <div
             v-for="(service, index) in services"
             :key="service.title"
@@ -18,9 +18,9 @@
             :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
             :style="{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }"
           >
-            <Icon :name="service.icon" class="text-custom-accent-700 text-4xl mb-4" /> 
+            <Icon :name="service.icon" class="text-custom-accent-700 text-4xl mt-12 mb-2" /> 
             <h3 class="text-md md:text-xl font-bold mb-2 text-neutral-100">{{ service.title }}</h3> 
-            <p class="text-sm md:text-md text-neutral-300">{{ service.description }}</p> 
+            <p class="text-sm md:text-md text-neutral-300 mb-2">{{ service.description }}</p> 
           </div>
         </div>
       </div>

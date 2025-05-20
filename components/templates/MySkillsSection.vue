@@ -28,7 +28,7 @@
                 class="text-md font-bold mt-6 w-full flex items-center justify-center px-4 py-2.5 bg-custom-accent-700 text-white rounded-md shadow-sm hover:bg-custom-accent-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-custom-box-800 focus:ring-custom-accent-600 transition-colors duration-150 ease-in-out cursor-pointer"
               >
                 <Icon name="i-heroicons-arrow-down-tray-20-solid" class="w-5 h-5 mr-2" />
-                download myy CV
+                download my CV
               </button>
           </div>
    
@@ -44,7 +44,7 @@
               :name="skill.icon"
               class="text-6xl md:text-7xl text-neutral-400 group-hover:text-custom-accent-600 transition-colors duration-300"
             />
-            <span class="mt-3 text-sm text-neutral-300 group-hover:text-neutral-100 transition-colors duration-300">{{ skill.name }}</span>
+            <span class="mt-3 text-sm text-neutral-300 group-hover:text-custom-accent-500 transition-colors duration-300">{{ skill.name }}</span>
           </div>
         </div>
       </div>
