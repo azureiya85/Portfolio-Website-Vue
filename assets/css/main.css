@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  /* Define  brand font (Satoshi) and sans-serif font (Host Grotesk) */
+  --font-brand: 'Satoshi', sans-serif; /* For 'ryhze' logo */
+  --font-sans: 'Host Grotesk', sans-serif; /* Default body font */
+
+  /* --- Custom Color Palettes  */
+
+  /* Palette for Primary Background (#162d50)*/
+  --color-custom-primary-50: #e8eaf1; 
+  --color-custom-primary-100: #cdd5e4;
+  --color-custom-primary-200: #b2bfd7;
+  --color-custom-primary-300: #97a8ca;
+  --color-custom-primary-400: #7c92bc;
+  --color-custom-primary-500: #617cad; 
+  --color-custom-primary-600: #4f6897;
+  --color-custom-primary-700: #3d5381;
+  --color-custom-primary-800: #2b3f6b;
+  --color-custom-primary-900: #162d50; /* Actual primary */
+  --color-custom-primary-950: #0e1e38; 
+
+  /* Palette for Secondary Accent (#ae4b5e) */
+  --color-custom-accent-50: #fdecef;
+  --color-custom-accent-100: #fad9de;
+  --color-custom-accent-200: #f6c6ce;
+  --color-custom-accent-300: #f0b3bd;
+  --color-custom-accent-400: #eaa0ac;
+  --color-custom-accent-500: #e48d9b; 
+  --color-custom-accent-600: #d97183;
+  --color-custom-accent-700: #ae4b5e; /* Actual secondary */
+  --color-custom-accent-800: #8e3c4b;
+  --color-custom-accent-900: #6e2d3a;
+  --color-custom-accent-950: #4e1e29;
+
+  /* Palette for Tertiary Box (#394260)  */
+  --color-custom-box-50: #ecedf0;
+  --color-custom-box-100: #d9dce1;
+  --color-custom-box-200: #c6c9d3;
+  --color-custom-box-300: #b3b6c5;
+  --color-custom-box-400: #a0a3b7;
+  --color-custom-box-500: #8c90a8; 
+  --color-custom-box-600: #6f748a;
+  --color-custom-box-700: #53586c;
+  --color-custom-box-800: #394260; /* Actual tertiary */
+  --color-custom-box-900: #2a3048;
+  --color-custom-box-950: #1b1e30;
+
+  /* --- Nuxt UI will also look for a 'neutral' palette --- */
+  /* YUse a Tailwind default like 'slate' or define custom-neutral */
+}
+
+:root {
+  /* Nuxt UI general theming variables */
+  /* --ui-primary, --ui-secondary will be set by Nuxt UI based on app.config.ts */
+
+  /* Set the default page background and text color */
+  --ui-bg: var(--color-custom-primary-900); 
+  --ui-text: var(--color-neutral-200); 
+  --ui-text-inverted: var(--color-custom-primary-900);
+  --ui-bg-inverted: var(--color-neutral-200);
+
+  /* Override specific Nuxt UI component variables here if needed,
+     but usually, app.config.ts + @theme is enough.
+  */
+}
+
+.dark {
+  /* Dark mode, not changing much */
+  --ui-bg: var(--color-custom-primary-950); 
+  --ui-text: var(--color-neutral-300); 
+}
+
+body {
+  @apply antialiased font-sans; /* font-sans will use Host Grotesk */
+  background-color: var(--ui-bg);
+  color: var(--ui-text);
+}
+
+/* Helper class for Satoshi font */
+.font-brand {
+  font-family: var(--font-brand);
+}
