@@ -117,8 +117,9 @@
           class="bg-custom-box-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group animate-fade-in"
           :style="`--delay: ${0.5 + index * 0.1}s`"
         >
-          <div class="h-40 overflow-hidden bg-custom-box-700 flex items-center justify-center">
-            <Icon :name="project.icon || 'uil:code'" class="text-5xl text-neutral-400 group-hover:text-custom-accent-600 transition-colors duration-300" />
+         <!-- Project Image -->
+          <div class="h-52 overflow-hidden">
+            <img :src="project.imageUrl" :alt="project.title" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" >
           </div>
           
           <div class="p-6 space-y-4">
@@ -273,8 +274,8 @@ const deployedProjects = ref([
   {
     title: 'Glint (NextJS)',
     description: 'A design agency website with full CMS integration and authentication capabilities.',
-    imageUrl: '/images/elitely-ordinary.avif',
-    link: 'https://github.com',
+    imageUrl: '/images/glint-studio.avif',
+    link: 'https://glint-vercel-next.vercel.app/',
     techStack: ['NextJS 15', 'Shadcn-UI', 'Tailwind 4', 'Backendless'],
     features: [
       'Authentication system',
@@ -286,7 +287,7 @@ const deployedProjects = ref([
     title: 'Portofolio Website (This Site)',
     description: 'A website to showcase my work and skills as a web developer.',
     imageUrl: '/images/vue-port.avif',
-    link: 'https://github.com',
+    link: 'https://portfolio-ryhze-vue.vercel.app/projects',
     techStack: ['Vue 3', 'Nuxt 3', 'Tailwind 4', 'Nuxt UI'],
     features: [
       'Portofolio showcase',
@@ -301,29 +302,29 @@ const undeployedProjects = ref([
   {
     title: 'Glint (Svelte)',
     description: 'Alternative version of the Glint design agency website built with Svelte 5.',
-    icon: 'logos:svelte-icon',
-    link: 'https://github.com',
+    imageUrl: '/images/glint-studio.avif',
+    link: 'https://github.com/azureiya85/glint-studio-svelte5',
     techStack: ['Svelte 5', 'Skeleton v3', 'Backendless', 'Authentication']
   },
   {
     title: 'Verdant',
-    description: 'A microblogging platform for sharing short-form content with full CRUD capabilities.',
-    icon: 'uil:edit-alt',
-    link: 'https://github.com',
+    description: 'A microblogging platform for sharing short-form content. It has very basic authentication and some CRUD capabilities.',
+    imageUrl: '/images/Verdant.avif',
+    link: 'https://github.com/azureiya85/Microblog-Verdant',
     techStack: ['Svelte 5', 'Skeleton v3', 'Backendless', 'Tailwind']
   },
   {
     title: 'Svelte-5-Playground',
     description: 'Collection of mini-applications built to explore Svelte 5 runes and capabilities.',
-    icon: 'logos:svelte-icon',
-    link: 'https://github.com',
+    imageUrl: '/images/svelte-pg.avif',
+    link: 'https://github.com/azureiya85/Svelte-5-Playground',
     techStack: ['Svelte 5', 'Bits-UI', 'Tailwind 4']
   },
   {
     title: 'Svelte-5-Prototyping',
     description: 'A tool for testing various color and typeface combinations for Svelte applications.',
-    icon: 'uil:swatchbook',
-    link: 'https://github.com',
+    imageUrl: 'uil:swatchbook',
+    link: 'https://github.com/azureiya85/Prototyping-Site',
     techStack: ['Svelte 5', 'Bits-UI', 'Tailwind 4']
   }
 ]);
@@ -363,11 +364,11 @@ const otherProjects = ref([
     tools: ['kdenlive']
   },
   {
-    title: 'Book Cover Designs',
-    description: 'Custom book cover designs for fiction and non-fiction works.',
-    imageUrl: '/images/elitely-ordinary.avif',
+    title: 'Illuvia: The Clockwork Age',
+    description: 'Book version of my homebrew Savage Worlds settings: Illuvia.',
+    imageUrl: '/images/illuvia-book.avif',
     category: 'Book',
-    link: 'https://github.com',
+    link: 'https://drive.google.com/file/d/108-gi6lVnvdMjNRvAFos-8AKEB_PcYPj/view?usp=sharingm',
     tools: ['Inkscape', 'GIMP', 'Scribus']
   }
 ]);
