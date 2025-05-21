@@ -14,22 +14,22 @@
         <div class="flex items-center space-x-6 md:space-x-8">
           <NuxtLink
             to="/"
-            class="text-neutral-200 hover:text-white transition-colors text-lg"
-            active-class="text-white font-semibold"
+            class="text-neutral-200 hover:text-custom-accent-600 transition-colors text-lg"
+            active-class=" text-custom-accent-600 border-b border-custom-accent-600 font-bold"
           >
             about
           </NuxtLink>
           <NuxtLink
             to="/skills"
-            class="text-neutral-200 hover:text-white transition-colors text-lg"
-            active-class="text-white font-semibold"
+            class="text-neutral-200 hover:text-custom-accent-600 transition-colors text-lg"
+            active-class=" text-custom-accent-600 border-b border-custom-accent-600 font-bold"
           >
             skills
           </NuxtLink>
           <NuxtLink
             to="/projects"
-            class="text-neutral-200 hover:text-white transition-colors text-lg"
-            active-class="text-white font-semibold"
+            class="text-neutral-200 hover:text-custom-accent-600 transition-colors text-lg"
+            active-class=" text-custom-accent-600 border-b border-custom-accent-600 font-bold"
           >
             projects
           </NuxtLink>

@@ -134,9 +134,9 @@ watch(() => props.isVisible, (newValue) => {
 }, { immediate: false });
 
 const projects = ref([
-  { id: 1, imageUrl: '/images/elitely-ordinary.png', alt: 'Placeholder Project Image 1', link: 'https://personal-blog-next-phi.vercel.app/', title: 'Personal Blog' },
-  { id: 2, imageUrl: '/images/illuvia-web.png', alt: 'Placeholder Project Image 2', link: 'https://illuvia-web.vercel.app/', title: 'TTRPG Homebrew' },
-  { id: 3, imageUrl: '/images/livewave-web.png', alt: 'Placeholder Project Image 3', link: 'https://minpro-eo.vercel.app/', title: 'Event Organizer' },
+  { id: 1, imageUrl: '/images/elitely-ordinary.avif', alt: 'Placeholder Project Image 1', link: 'https://personal-blog-next-phi.vercel.app/', title: 'Personal Blog' },
+  { id: 2, imageUrl: '/images/illuvia-web.avif', alt: 'Placeholder Project Image 2', link: 'https://illuvia-web.vercel.app/', title: 'TTRPG Homebrew' },
+  { id: 3, imageUrl: '/images/livewave-web.avif', alt: 'Placeholder Project Image 3', link: 'https://minpro-eo.vercel.app/', title: 'Event Organizer' },
 ]);
 </script>
 
