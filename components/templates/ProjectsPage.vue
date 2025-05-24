@@ -294,6 +294,18 @@ const deployedProjects = ref([
       'Responsive design',
       'Thematic design'
     ]
+  },
+  {
+    title: 'Prototype Designer',
+    description: 'A tool for testing various color and typeface combinations for Svelte applications using Skeleton 3.',
+    imageUrl: '/images/prototype-designer.avif',
+    link: 'https://prototyping-site-svelte5.vercel.app/',
+    techStack: ['Svelte 5', 'Tailwind 4', 'Skeleton 3'],
+    features: [
+      'Modern UI/UX',
+      'Comprehensive way to prototype',
+      'Skeleton 3 components integration'
+    ]
   }
 ]);
 
@@ -319,14 +331,7 @@ const undeployedProjects = ref([
     imageUrl: '/images/svelte-pg.avif',
     link: 'https://github.com/azureiya85/Svelte-5-Playground',
     techStack: ['Svelte 5', 'Bits-UI', 'Tailwind 4']
-  },
-  {
-    title: 'Svelte-5-Prototyping',
-    description: 'A tool for testing various color and typeface combinations for Svelte applications.',
-    imageUrl: 'uil:swatchbook',
-    link: 'https://github.com/azureiya85/Prototyping-Site',
-    techStack: ['Svelte 5', 'Bits-UI', 'Tailwind 4']
-  }
+  } 
 ]);
 
 // Other creative projects
