@@ -331,6 +331,13 @@ const undeployedProjects = ref([
     imageUrl: '/images/svelte-pg.avif',
     link: 'https://github.com/azureiya85/Svelte-5-Playground',
     techStack: ['Svelte 5', 'Bits-UI', 'Tailwind 4']
+  },
+  {
+    title: 'Bakery Shop',
+    description: 'A full-fledged bakery shop website with storefront and admin dashboard, comprehensive product, inventory, and order management features.',
+    imageUrl: '/images/jo-bakery.avif',
+    link: 'https://github.com/azureiya85/jo-bakery-shop',
+    techStack: ['Svelte 3', 'Skeleton v3', 'Tailwind 4', 'Supabase']
   } 
 ]);
 
