@@ -306,6 +306,20 @@ const deployedProjects = ref([
       'Comprehensive way to prototype',
       'Skeleton 3 components integration'
     ]
+  },
+   {
+    title: 'Work Vault (Job Board)',
+    description: 'Complete job board website with authentication, email notification, comprehensiv filtering and CRUD operation.',
+    imageUrl: '/images/prototype-designer.avif',
+    link: 'https://team1-finpro-job-board-web.vercel.app/',
+    techStack: ['NexJS', 'Tailwind 4', 'ShadCN UI', 'Prisma', 'Supabase', 'Next-Auth v5'],
+    features: [
+      'Modern UI/UX',
+      'Full featured job creation and application',
+      'Payment with midtrans',
+      'Email notification',
+      'OAuth and Next-Auth integration'
+    ]
   }
 ]);
 
