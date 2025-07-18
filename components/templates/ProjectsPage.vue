@@ -310,7 +310,7 @@ const deployedProjects = ref([
    {
     title: 'Work Vault (Job Board)',
     description: 'Complete job board website with authentication, email notification, comprehensiv filtering and CRUD operation.',
-    imageUrl: '/images/prototype-designer.avif',
+    imageUrl: '/images/job-board-app.avif',
     link: 'https://team1-finpro-job-board-web.vercel.app/',
     techStack: ['NexJS', 'Tailwind 4', 'ShadCN UI', 'Prisma', 'Supabase', 'Next-Auth v5'],
     features: [
