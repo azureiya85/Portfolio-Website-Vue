@@ -366,27 +366,19 @@ const otherProjects = ref([
     tools: ['Godot 4.4', 'GDScript', 'Aseprite']
   },
   {
-    title: 'Event Posters Collection',
-    description: 'Various poster designs created for events, showcasing layout and typography skills.',
-    imageUrl: '/images/elitely-ordinary.avif',
-    category: 'Poster',
-    link: 'https://github.com',
-    tools: ['Inkscape', 'GIMP']
-  },
-  {
     title: 'Photography Portfolio',
     description: 'A collection of landscape and portrait photography highlighting composition techniques.',
     imageUrl: '/images/elitely-ordinary.avif',
     category: 'Photos',
-    link: 'https://github.com',
+    link: 'https://www.instagram.com/ry_hze/',
     tools: ['darktable', 'GIMP']
   },
   {
-    title: 'Short Film Collection',
-    description: 'A series of short narrative videos exploring storytelling through visual medium.',
+    title: 'Videography',
+    description: 'My work as an independent content creator',
     imageUrl: '/images/elitely-ordinary.avif',
     category: 'Video',
-    link: 'https://github.com',
+    link: 'https://www.youtube.com/@hazearu_Ch',
     tools: ['kdenlive']
   },
   {
